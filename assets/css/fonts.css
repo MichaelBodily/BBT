@@ -193,8 +193,9 @@
     src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
-font-family: 'Open Sans Semi Bold';
-src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+@font-face {
+    font-family: 'Open Sans Semi Bold';
+    src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
 }
 
 @font-face {    
