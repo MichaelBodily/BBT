@@ -10,39 +10,51 @@
 
     <title>Index</title>
 
+    <style>
+        /* Show it is fixed to the top */
+        body {
+        min-height: 75rem;
+        padding-top: 4.5rem;
+        }
+
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
       <!-- Custom styles for this template -->
     <link href="assets/css/carousel.css" rel="stylesheet">
-    <link href="assets/css/fonts.css" rel="stylesheet">
-    <link href="assets/css//zoom.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="topline"><div class="topline-right"></div></div>
-    <div class="topwhite"></div>
-
-    <nav class="navbar navbar-expand-md fixed-top bg-trans">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/img/bb_logo@2x.png" style="max-height: 84px;" alt="">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       
       
 
@@ -351,58 +363,9 @@
               </main>
           
 
-              <!-- Footer
-        ============================================= -->
-        <footer id="footer" class="bg-dark">
-
-            <div class="container">
-
-                <!-- Footer Widgets
-                ============================================= -->
-                <div class="row align-items-center clearfix">
-                    <div class="col">
-                        <img src="images/logo_connect_dark@2x.png" alt="" class="footer-logo" style="max-width:80%">
-                    </div>
-
-                    <div class="col">
-                        <div>64 E. Winchester St, Suite 300</div>
-                        <div>Murray, UT 84107</div>
-                    </div>
-
-                    <div class="col">
-                        <abbr title="Phone Number"><strong>Phone:</strong></abbr> (801) 327-9700<br>
-                        <abbr title="Email Address"><strong>Email:</strong></abbr> sales@connectfss.com
-                    </div>
-
-                </div><!-- .footer-widgets-wrap end -->
-
-            </div>
-
-            <!-- Copyrights
-            ============================================= -->
-            <div id="copyrights" style="background-color: #000000;">
-
-                <div class="container clearfix">
-
-                    <div class="col_half">
-                        Copyrights &copy; <span id="copyrightDate"></span> All Rights Reserved by Connect Fss Inc.<br>
-                        <div class="copyright-links"><a href="terms.html">Terms of Use</a> / <a href="privacy.html">Privacy Policy</a></div>
-                    </div>
-
-                    <div class="col_half col_last tright">
-
-                        <i class="icon-envelope2"></i> <a href="mailto:sales@connectfss.com" target="_blank"><img src="images/sales-tagline.png" alt="email address"></a> <span class="middot">&middot;</span> <i class="icon-headphones"></i> 801-327-9700 <span class="middot">&middot;</span>
-                    </div>
-
-                </div>
-
-            </div><!-- #copyrights end -->
-        </footer><!-- #footer end -->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/get-year.js"></script>
   </body>
 </html>
