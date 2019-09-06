@@ -1,0 +1,511 @@
+/* GHYPICONS - SAME AS BOOTSTRAP */
+/* GHYPICONS - SAME AS BOOTSTRAP */
+/* GHYPICONS - SAME AS BOOTSTRAP */
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+} 
+
+/* Fira Sans */
+/* Fira Sans */
+/* Fira Sans */
+@font-face {
+    font-family: 'Fira Sans Extra Condensed Black';
+    src: url('../fonts/FiraSansExtraCondensed-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Sans Extra Condensed Black Italic';
+    src: url('../fonts/FiraSansExtraCondensed-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Fira Sans Extra Condensed Bold';
+    src: url('../fonts/FiraSansExtraCondensed-Bold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Bold Italic';
+    src: url('../fonts/FiraSansExtraCondensed-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Extra Bold';
+    src: url('../fonts/FiraSansExtraCondensed-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Extra Bold Italic';
+    src: url('../fonts/FiraSansExtraCondensed-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Extra Light';
+    src: url('../fonts/FiraSansExtraCondensed-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Extra Light Italic';
+    src: url('../fonts/FiraSansExtraCondensed-ExtraLightItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Italic';
+    src: url('../fonts/FiraSansExtraCondensed-Italic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Light';
+    src: url('../fonts/FiraSansExtraCondensed-Light.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Light Italic';
+    src: url('../fonts/FiraSansExtraCondensed-LightItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Medium';
+    src: url('../fonts/FiraSansExtraCondensed-Medium.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Medium Italic';
+    src: url('../fonts/FiraSansExtraCondensed-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed';
+    src: url('../fonts/FiraSansExtraCondensed-Regular.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Semi Bold';
+    src: url('../fonts/FiraSansExtraCondensed-SemiBold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Semi Bold Italic';
+    src: url('../fonts/FiraSansExtraCondensed-SemiBoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Thin';
+    src: url('../fonts/FiraSansExtraCondensed-Thin.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Fira Sans Extra Condensed Thin Italic';
+    src: url('../fonts/FiraSansExtraCondensed-ThinItalic.ttf') format('truetype');
+}
+
+
+/* Lato */
+/* Lato */
+/* Lato */
+@font-face {    
+    font-family: 'Lato Black';
+    src: url('../fonts/Lato-Black.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Black Italic';
+    src: url('../fonts/Lato-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Bold';
+    src: url('../fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Bold Italic';
+    src: url('../fonts/Lato-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Hairline';
+    src: url('../fonts/Lato-Hairline.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Hairline Italic';
+    src: url('../fonts/Lato-HairlineItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Italic';
+    src: url('../fonts/Lato-Italic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Light Italic';
+    src: url('../fonts/Lato-LightItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Lato Regular';
+    src: url('../fonts/Lato-Regular.ttf') format('truetype');
+}
+
+
+/* Open Sans */
+/* Open Sans */
+/* Open Sans */
+@font-face {    
+    font-family: 'Open Sans Bold';
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Bold Italic';
+    src: url('../fonts/OpenSans-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Extra Bold';
+    src: url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Extra Bold Italic';
+    src: url('../fonts/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Italic';
+    src: url('../fonts/OpenSans-Italic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Light';
+    src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Light Italic';
+    src: url('../fonts/OpenSans-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Regular';
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+font-family: 'Open Sans Semi Bold';
+src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Open Sans Semi Bold Italic';
+    src: url('../fonts/OpenSans-SemiboldItalic.ttf') format('truetype');
+}
+
+
+
+/* Roboto */
+/* Roboto */
+/* Roboto */
+@font-face {    
+    font-family: 'Roboto Black';
+    src: url('../fonts/Roboto-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Black Italic';
+    src: url('../fonts/Roboto-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Bold Italic';
+    src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Italic';
+    src: url('../fonts/Roboto-Italic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Light Italic';
+    src: url('../fonts/Roboto-LightItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Medium Italic';
+    src: url('../fonts/Roboto-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Thin';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+}
+
+@font-face {    
+    font-family: 'Roboto Thin Italic';
+    src: url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
+}
+
+
+/* Limerick */
+/* Limerick */
+/* Limerick */
+@font-face {
+	font-family: 'limerick_serialmedium';
+	src: url('../fonts/Limerick_Serial-Medium-webfont.eot');
+	src: url('../fonts/Limerick_Serial-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Limerick_Serial-Medium-webfont.woff2') format('woff2'),
+		 url('../fonts/Limerick_Serial-Medium-webfont.woff') format('woff'),
+		 url('../fonts/Limerick_Serial-Medium-webfont.ttf') format('truetype'),
+		 url('../fonts/Limerick_Serial-Medium-webfont.svg#limerick_serialmedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'limerick_serialxbold';
+	src: url('../fonts/Limerick_Serial-Xbold-webfont.eot');
+	src: url('../fonts/Limerick_Serial-Xbold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Limerick_Serial-Xbold-webfont.woff2') format('woff2'),
+		 url('../fonts/Limerick_Serial-Xbold-webfont.woff') format('woff'),
+		 url('../fonts/Limerick_Serial-Xbold-webfont.ttf') format('truetype'),
+		 url('../fonts/Limerick_Serial-Xbold-webfont.svg#limerick_serialxbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'limerick_serialregular';
+	src: url('../fonts/Limerick_Serial-Regular-webfont.eot');
+	src: url('../fonts/Limerick_Serial-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Limerick_Serial-Regular-webfont.woff2') format('woff2'),
+		 url('../fonts/Limerick_Serial-Regular-webfont.woff') format('woff'),
+		 url('../fonts/Limerick_Serial-Regular-webfont.ttf') format('truetype'),
+		 url('../fonts/Limerick_Serial-Regular-webfont.svg#limerick_serialregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+
+/* Montserrat */
+/* Montserrat */
+/* Montserrat */
+@font-face {
+    font-family: 'montserrat_light';
+    src: url('../fonts/Montserrat-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_regular';
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_medium';
+    src: url('../fonts/Montserrat-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_semi_bold';
+    src: url('../fonts/Montserrat-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat_bold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Nunito */
+/* Nunito */
+/* Nunito */
+@font-face {
+    font-family: 'nunito_light';
+    src: url('../fonts/Montserrat-Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nunito_regular';
+    src: url('../fonts/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nunito_semi_bold';
+    src: url('../fonts/Montserrat-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nunito_bold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* misc fonts */
+/* misc fonts */
+/* misc fonts */
+
+@font-face {    
+    /* Slabo  */
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
+}
+
+
+@font-face {    
+    /* Slabo  */
+    font-family: 'Slabo 27px';
+    src: url('../fonts/Slabo27px-Regular.ttf') format('truetype');
+}
+
+@font-face {    
+    /* Slabo  */
+    font-family: 'Magneto';
+    src: url('../fonts/magnetob.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'IconicStroke';
+    src: url("../fonts/iconic_stroke.eot");
+    src: local('IconicStroke'),
+        url("../fonts/.svg#iconic") format('svg'),
+        url("../fonts/iconic_stroke.otf") format('opentype');
+}
+
+.iconic {
+    color:inherit;
+    font-family: "IconicStroke";
+    font-size: 3.2rem;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+a.iconic:hover {
+    color:inherit;
+}
+
+.iconic.home:before { content: '!'; }
+.iconic.at:before { content: "@"; }
+.iconic.quote:before { content: '"'; }
+.iconic.quote-alt:before { content: "'"; }
+.iconic.arrow-up:before { content: "3"; }
+.iconic.arrow-right:before { content: "4"; }
+.iconic.arrow-bottom:before { content: "5"; }
+.iconic.arrow-left:before { content: "6"; }
+.iconic.arrow-up-alt:before { content: "#"; }
+.iconic.arrow-right-alt:before { content: "$"; }
+.iconic.arrow-bottom-alt:before { content: "%"; }
+.iconic.arrow-left-alt:before { content: "^"; }
+.iconic.move:before { content: "9"; }
+.iconic.move-vertical:before { content: "8"; }
+.iconic.move-horizontal:before { content: "7"; }
+.iconic.move-alt:before { content: "("; }
+.iconic.move-vertical-alt:before { content: "*"; }
+.iconic.move-horizontal-alt:before { content: "&"; }
+.iconic.cursor:before { content: ")"; }
+.iconic.plus:before { content: "+"; }
+.iconic.plus-alt:before { content: "="; }
+.iconic.minus:before { content: "-"; }
+.iconic.minus-alt:before { content: "_"; }
+.iconic.new-window:before { content: "1"; }
+.iconic.dial:before { content: "2"; }
+.iconic.lightbulb:before { content: "0"; }
+.iconic.link:before { content: "/"; }
+.iconic.image:before { content: "?"; }
+.iconic.article:before { content: ">"; }
+.iconic.read-more:before { content: "."; }
+.iconic.headphones:before { content: ","; }
+.iconic.equalizer:before { content: "<"; }
+.iconic.fullscreen:before { content: ":"; }
+.iconic.exit-fullscreen:before { content: ";"; }
+.iconic.spin:before { content: "["; }
+.iconic.spin-alt:before { content: "{"; }
+.iconic.moon:before { content: "]"; }
+.iconic.sun:before { content: "}"; }
+.iconic.map-pin:before { content: "\\"; }
+.iconic.pin:before { content: "|"; }
+.iconic.eyedropper:before { content: "~"; }
+.iconic.denied:before { content: "`"; }
+.iconic.calendar:before { content: "a"; }
+.iconic.calendar-alt:before { content: "A"; }
+.iconic.bolt:before { content: "b"; }
+.iconic.clock:before { content: "c"; }
+.iconic.document:before { content: "d"; }
+.iconic.book:before { content: "e"; }
+.iconic.book-alt:before { content: "E"; }
+.iconic.magnifying-glass:before { content: "f"; }
+.iconic.tag:before { content: "g"; }
+.iconic.heart:before { content: "h"; }
+.iconic.info:before { content: "i"; }
+.iconic.chat:before { content: "j"; }
+.iconic.chat-alt:before { content: "J"; }
+.iconic.key:before { content: "k"; }
+.iconic.unlocked:before { content: "l"; }
+.iconic.locked:before { content: "L"; }
+.iconic.mail:before { content: "m"; }
+.iconic.mail-alt:before { content: "M"; }
+.iconic.phone:before { content: "n"; }
+.iconic.box:before { content: "o"; }
+.iconic.pencil:before { content: "p"; }
+.iconic.pencil-alt:before { content: "P"; }
+.iconic.comment:before { content: "q"; }
+.iconic.comment-alt:before { content: "Q"; }
+.iconic.rss:before { content: "r"; }
+.iconic.star:before { content: "s"; }
+.iconic.trash:before { content: "t"; }
+.iconic.user:before { content: "u"; }
+.iconic.volume:before { content: "v"; }
+.iconic.mute:before { content: "V"; }
+.iconic.cog:before { content: "w"; }
+.iconic.cog-alt:before { content: "W"; }
+.iconic.x:before { content: "x"; }
+.iconic.x-alt:before { content: "X"; }
+.iconic.check:before { content: "y"; }
+.iconic.check-alt:before { content: "Y"; }
+.iconic.beaker:before { content: "z"; }
+.iconic.beaker-alt:before { content: "Z"; }
+
+/* End FONTS  */
+/* End FONTS  */
+/* End FONTS  */
