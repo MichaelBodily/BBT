@@ -56,7 +56,7 @@ function fetchDate() {
 
 }
 
-
+// to be called from the page
 function fetchYear() {
 	var currentTime = new Date();
 	var year = currentTime.getFullYear();
