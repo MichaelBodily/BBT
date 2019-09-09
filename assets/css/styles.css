@@ -249,6 +249,13 @@ div.card-text {
     background-color: #F3F3F3;
 }
 
+.sub-information-block {
+    padding: 1rem;
+    background-color: #F3F3F3;
+    border-radius: 3px;
+    margin-top: 1.5rem;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
