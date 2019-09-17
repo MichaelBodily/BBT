@@ -1,11 +1,11 @@
 body {
-    font-family: 'Open Sans Regular', 'Lato Regular', Arial, Helvetica, sans-serif;
+    font-family: 'montserrat_regular', 'Open Sans Regular', 'Lato Regular', Arial, Helvetica, sans-serif;
     min-height: 12rem;
     padding-top: 124px;
 }
 
 .bold {
-    font-family: 'Open Sans Bold', 'Lato Bold', Arial, Helvetica, sans-serif;
+    font-family: 'montserrat_bold', 'Open Sans Bold', 'Lato Bold', Arial, Helvetica, sans-serif;
 }
 
 .body-copy-lg {
