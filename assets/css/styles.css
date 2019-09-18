@@ -1,150 +1,54 @@
 body {
-    font-family: 'montserrat_regular', 'Open Sans Regular', 'Lato Regular', Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
     min-height: 12rem;
     padding-top: 124px;
+    color: #222222;
 }
 
 .bold {
-    font-family: 'montserrat_bold', 'Open Sans Bold', 'Lato Bold', Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
 
-.body-copy-lg {
-    font-size: 18px;
-    color: #777777;
+.logo-top {
+    max-height: 76px;
+    margin-left: 35px;
+    margin-top: -24px;
 }
 
-.body-copy {
-    font-size: 16px;
-    color: #888888;
-}
-
-.bg-trans {
-    background-color: transparent;
-}
-
-.img-rounded {
-    border-radius: 4px;
-}
-
-.green-line {
-    width: 100%; 
-    height: 6px; 
-    background-color: #006245;
-}
-
-.bread-crumb,
-.bread-crumb a {
-    color: #999999;
-    text-transform: uppercase;
-}
-
-
-div.card-text.header {
-    text-align: center; 
-    color: #222222;
-    margin-bottom:.3rem;
-    font-size:1rem;
-}
-
-div.card-text {
-    text-align: center; 
-    color: #888888;
-    font-size:.9rem;
-}
-
-.card-img-top {
-    text-align: center;
-}
-
-.card-img-top > img {
-     margin: .8rem auto;
-}
-
-.card-top-green {
-    background-color: #77BD77;
-}
-
-.card-top-blue {
-    background-color: #679DCD;
-}
-
-.card-top-violet {
-    background-color: #8279BB;
-}
-
-.card-top-red {
-    background-color: #BD7787;
-}
-
-.card-top-orange {
-    background-color: #C18873;
-}
-
-.card-top-yellow {
-    background-color: #C6BC67;
-}
-
-.divider-div {
-    width:100%; 
-    height:2px; 
-    background-color: #E3E3E3;
-}
-
-.topwhite {
-    position: fixed;
-    height: 124px;
-    z-index: 9900;
-    display: block;
-    top: 0;
-    right: 0;
-    width: 100%;
-    background-color: #ffffff;
-}
-
-.topline {
-    position: fixed;
-    height: 58px;
-    z-index: 9901;
-    display: block;
-    top: 33px;
-    width: 100%;
-    background-color: #0d6c4c;
-}
-
-.topline-right {
-    position: absolute;
-    height: 58px;
-    z-index: 9902;
-    display: block;
-    top: 0;
-    right: 0;
-    left: 220px;
-    width: 99%;
-    background-color: #aa0633;
+.logo-bottom {
+    max-height: 76px;
+    margin: 14px auto 14px 12px;
 }
 
 .navbar {
+    font-family: 'montserrat_bold', 'Open Sans Bold', Arial, Helvetica, sans-serif;
     z-index: 9905;
-    height: 124px;
+    height: 144px;
 }
 
 .navbar .nav-item {
     white-space: nowrap;
+    margin-left: 1rem;
 }
 
-
 .navbar-collapse a {
-    color: #ffffff;
+    color: #383838;
     text-transform: uppercase;
+    position: relative;
+    top: -.8rem;
+}
+
+.navbar-collapse .active a {
+    color: #777777;
 }
 
 .navbar .nav-button {
-    background-color: #FFFFFF;
+    background-color: #1777B2;
     border-radius: 3px;
-    color: #006245;
-    padding: .3rem;
+    color: #FFFFFF;
+    padding: .3rem .5rem;
     position: relative;;
-    top: .5rem;
+    top: -.3rem;
     text-decoration: none;
     margin-left: .6rem;
     margin-right: .6rem;
@@ -154,17 +58,19 @@ div.card-text {
 .navbar .nav-button:active,
 .navbar .nav-button:focus
 {
-    background-color: #EEEEEE;
-    color: #006245;
+    color: #FFFFFF;
+    background-color: #3EA8E6;
 }
 
 .navbar-collapse a.dropdown-item {
+    font-family: 'montserrat_regular', 'Open Sans Regular', Arial, Helvetica, sans-serif;
+
     text-transform: none;
     font-size: 90%;
 }
 
 .navbar-collapse a:hover {
-    color: rgba(255,255,255,0.8);
+    color: #787878;
 }
 
 .navbar-collapse .dropdown-item {
@@ -199,8 +105,71 @@ div.card-text {
     -webkit-box-shadow: none !important;
 }
 
+.body-copy-lg {
+    font-size: 18px;
+    color: #222222;
+}
+
+.body-copy {
+    font-size: 16px;
+    color: #222222;
+}
+
+.bg-wavy {
+    background-image: url(../img/blue-wavy-line.png)
+}
+
+.img-rounded {
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.color-header {
+    color: #9C182F;
+    font-size: 26px;
+}
+
+
+div.card-text.header {
+    text-align: center; 
+    color: #222222;
+    margin-bottom:.3rem;
+    font-size:1rem;
+}
+
+div.card-text {
+    text-align: center; 
+    color: #888888;
+    font-size:.9rem;
+}
+
+.card-img-top {
+    text-align: center;
+}
+
+.card-img-top > img {
+     margin: .8rem auto;
+}
+
+.card-top-green {
+    background-color: #77BD77;
+}
+
+
+.divider-div {
+    width:100%; 
+    height:2px; 
+    background-color: #E3E3E3;
+}
+ 
+.bottom-line {
+    background-color: #127EC2;
+    width: 100%; 
+    height: 4px; 
+}
+
 .footer-dark {
-    background-color: #383838;
+    background-color: #F7F7F7;
 }
 
 .footer-header {
@@ -208,13 +177,12 @@ div.card-text {
 }
 
 .footer-body-copy {
-    font-size: 90%;
+    font-size: 99%;
 }
 
 .footer-body-copy p {
     margin-bottom: .2rem;
     padding-bottom: .33rem;
-    border-bottom: 1px solid rgb(99,99,99);
 }
 
 .footer-body-copy p:last-of-type {
@@ -222,7 +190,7 @@ div.card-text {
 }
 
 .footer-widgets {
-    color:#c5c5c5;
+    color:#747474;
 }
 
 .footer-link {
@@ -237,7 +205,7 @@ div.card-text {
     background-color: #000000;
     color: #555555;
     font-size: 90%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 }
 
 .success-stories .success-item {
@@ -264,6 +232,58 @@ div.card-text {
     -ms-user-select: none;
     user-select: none;
   }
+
+  .news-item  {
+    list-style-image: url(../img/icon-carrot.png);
+    margin-left: -24px;
+  } 
+  
+  .news-item > li  {
+    margin-bottom:6px;
+  } 
+
+  .news-item a {
+    color: #222222;
+  } 
+
+  .right-rail-menu-header {
+      font-size: 110%;
+      color: #9C182F;
+      font-weight: bold;
+      position: relative;
+      left: 44px;
+      top: -8px;
+  }
+
+  .right-rail-menu {
+    position: relative;
+    left: 2px;
+    display: block;
+    width: 450px;
+  }
+
+  .right-rail-menu > li  {
+    margin-bottom: 6px;
+    background: url(../img/icon-carrot.png) no-repeat 0px 8px transparent;
+    list-style-type: none;
+    padding: 0px 0px 1px 16px;
+    vertical-align: middle;
+  } 
+
+  .right-rail-menu > li.rr-indent {
+    background: url(../img/icon-carrot.png) no-repeat 14px 8px transparent;
+      padding-left: 30px;
+  }
+
+  .right-rail-menu a {
+    color: #222222;
+  } 
+
+  .module-lead-in {
+      font-weight: bold;
+      color: #4B4B4B;
+  }
+
 
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
