@@ -20,6 +20,22 @@ body {
     margin: 14px auto 14px 12px;
 }
 
+.banner-image {
+    padding-top: 20.38%; /* 383px tall/1879px wide =  .203831 */
+    background-color: #FFFFFF;
+    background-image: url(../img/blue-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .banner-image {
+        padding-top: 240px;  
+        background-position: center;
+    }
+}
+
 .navbar {
     font-family: 'montserrat_bold', 'Open Sans Bold', Arial, Helvetica, sans-serif;
     z-index: 9905;
@@ -29,6 +45,86 @@ body {
 .navbar .nav-item {
     white-space: nowrap;
     margin-left: 1rem;
+}
+
+@media (max-width: 1380px) {
+    .navbar .nav-item {
+        margin-left: .5rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .navbar .nav-item {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1220px) {
+    .navbar .nav-item {
+        margin-left: 0;
+        font-size: 85%;
+    }
+
+    .navbar .nav-button {
+        padding: .2rem .35rem;
+        margin-left: .4rem;
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 1098px) {
+    .navbar .nav-item {
+        margin-left: 0;
+        font-size: 75%;
+    }
+
+    .navbar .nav-button {
+        padding: .12rem .35rem;
+        margin-left: .4rem;
+        font-size: 75%;
+    }
+
+    .logo-top {
+        margin-left: 22px;
+    }
+}
+
+@media (max-width: 998px) {
+    .navbar .nav-item {
+        margin-left: 0;
+        font-size: 70%;
+    }
+
+    .navbar .nav-button {
+        padding: .12rem .35rem;
+        margin-left: .4rem;
+        font-size: 70%;
+    }
+
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: .2rem;
+        padding-left: .2rem;
+    }
+
+    .logo-top {
+        margin-left: 12px;
+    }
+}
+
+.navbar-toggler {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-collapse.show {
+    background-color: #FFFFFF;
+    border:1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 .navbar-collapse a {
@@ -52,6 +148,10 @@ body {
     text-decoration: none;
     margin-left: .6rem;
     margin-right: .6rem;
+}
+
+.navbar-collapse.show .nav-button {
+    margin-left: 0;
 }
 
 .navbar .nav-button:hover,
