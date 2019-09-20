@@ -109,7 +109,7 @@
 
             <hr>
 
-            <form id="BbtForm" action="http://www.bing.com" class="bbt-form">
+            <form id="BbtForm" action="http://www.bing.com" method="post" class="bbt-form">
                 <!-- EMAIL -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
@@ -197,6 +197,10 @@
     
                         <div class="col-md-5">
                             <button id="SubmitButton" name="SubmitButton" class="submit-button">Submit</button>
+
+                            <div id="spinnerDiv" style="display:none; margin-left: 10px;">
+                                <img src="assets/img/ajax_loader.gif" />
+                            </div>
                         </div>
                     </div>
             </form>
@@ -267,6 +271,7 @@
         BbtFormModule = (function() {
             // local vars
             var $q = document.querySelector.bind(document);
+            var formBlob = $q("#BbtForm");
 
             // set up code box
             var seq = (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
@@ -279,172 +284,105 @@
             var _validateForm = function(e) {
                 console.log("Got here: e.currentTarget = ", e.currentTarget)
 
-                var formBlob = $q("#BbtForm");
-                var addJointOwnerFormValid = true;
-                var addJointOwnerFormTextRegx = /^[A-Za-z\d\-_.,!"'?#\s]+$/;
-                var addJointOwnerFormEmailRegx = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                var addJointOwnerFormSocialRegx = /^[0-9]{3}\-?[0-9]{2}\-?[0-9]{4}$/;
-                var addJointOwnerFormZipRegx = /^\d{5}$/;
+                
+                var formValid = true;
+                var textRegx = /^[A-Za-z\d\-_.,!"'?#\s]+$/;
+                var emailRegx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                var phoneRegx = /^\d{3}\-\d{3}\-\d{4}$/;
 
-                $("#AddNewJointOwnerSubmitButton").prop("disabled", true);
-                $("#AddJointOwnerValidationDiv").empty();
-                $("#AddJointOwnerValidationDiv").html('@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationNotification")');  // Please correct the following errors: 
-
-                // first name 
-                if (formBlob.FirstName.value === "") { // required
-                    $q("#FirstNameTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationFirstName")'); // Please enter a first name
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormTextRegx.test(formBlob.FirstName.value)) {
-                    $q("#FirstNameTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidFirstName")'); // Please enter a valid first name
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#FirstNameTextbox").style.outline = "none";
-                };
-
-                // last name 
-                if (formBlob.LastName.value === "") { // required
-                    $q("#LastNameTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationLastName")'); // Please enter your last name
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormTextRegx.test(formBlob.LastName.value)) {
-                    $q("#FirstNameTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidLastName")'); // Please enter a valid last name
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#LastNameTextbox").style.outline = "none";
-                };
-
-                // date of birth 
-                if (formBlob.DateOfBirth.value === "") { // required
-                    $q("#DateOfBirthTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationDateOfBirth")'); // Please enter your date of birth"
-                    addJointOwnerFormValid = false;
-                    // Date parse
-                } else if (!Date.parse(formBlob.DateOfBirth.value)) {
-                    $q("#DateOfBirthTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidDateOfBirth")'); // Please enter a valid date of birth
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#DateOfBirthTextbox").style.outline = "none";
-                };
-
-                // social security number
-                if (formBlob.SocialSecurityNumber.value === "") { // required
-                    $q("#SocialSecurityNumberTextbox").parentNode.style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationSocialSecurityNumber")'); // Please enter your social security number
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormSocialRegx.test(formBlob.SocialSecurityNumber.value)) {
-                    $q("#SocialSecurityNumberTextbox").parentNode.style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidSocialSecurityNumber")'); // Please enter a valid social security number. xxxxxxxxx or xxx-xx-xxxx format. No spaces.                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#SocialSecurityNumberTextbox").parentNode.style.outline = "none";
-                };
-
-                // drivers licence number
-                if (formBlob.DriversLicenseNumber.value === "") { // required
-                    $q("#DriversLicenseNumberTextbox").parentNode.style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationDriversLicenseNumber")'); // Please enter your drivers licence number
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormTextRegx.test(formBlob.DriversLicenseNumber.value)) {
-                    $q("#DriversLicenseNumberTextbox").parentNode.style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidDriversLicenseNumber")'); // Please enter a valid drivers license number
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#DriversLicenseNumberTextbox").parentNode.style.outline = "none";
-                };
-
-                // drivers licence state
-                if (formBlob.DriversLicenseState.value === "none") { // required
-                    $q("#DriversLicenseStateSelect").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationDriversLicenseState")'); // Please enter your Driver's License state
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#DriversLicenseStateSelect").style.outline = "none";
-                };
-
-                // address one
-                if (formBlob.AddressOne.value === "") { // required
-                    $q("#AddressOneTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationAddressOne")'); // Please enter your address
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormTextRegx.test(formBlob.AddressOne.value)) {
-                    $q("#AddressOneTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidAddressOne")'); // Please enter a valid address
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#AddressOneTextbox").style.outline = "none";
-                };
-
-                // city
-                if (formBlob.City.value === "") { // required
-                    $q("#CityTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationCity")'); // Please enter your city
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormTextRegx.test(formBlob.City.value)) {
-                    $q("#CityTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidCity")'); // Please enter a valid city
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#CityTextbox").style.outline = "none";
-                };
-
-                // state
-                if (formBlob.State.value === "none") { // required
-                    $q("#StateSelect").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationState")'); // Please enter your state
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#StateSelect").style.outline = "none";
-                };
-
-                // zip
-                if (formBlob.ZipCode.value === "") { // required
-                    $q("#ZipCodeTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationZip")'); // Please enter your zip code
-                    addJointOwnerFormValid = false;
-                    // Regex test
-                } else if (!addJointOwnerFormZipRegx.test(formBlob.ZipCode.value)) {
-                    $q("#ZipCodeTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidZip")'); // Please enter a valid zip code
-                    addJointOwnerFormValid = false;
-                } else {
-                    $q("#ZipCodeTextbox").style.outline = "none";
-                };
+                $("#SubmitButton").prop("disabled", true);
 
                 // email
-                if (formBlob.EmailAddress.value === "") { // required
-                    $q("#EmailAddressTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationEmailAddress")'); // Please enter your E-mail address
-                    addJointOwnerFormValid = false;
+                if (formBlob.EmailTextbox.value === "") { // required
+                    $q("#EmailTextbox").style.outline = "1px solid red";
+                    formValid = false;
                     // Regex test
-                } else if (!addJointOwnerFormEmailRegx.test(formBlob.EmailAddress.value)) {
-                    $q("#EmailAddressTextbox").style.outline = "1px solid red";
-                    $("#AddJointOwnerValidationDiv").append("<br>&bull; " + '@ResourceHelper.GetText("AccountOpening/AccountOpening.cshtml", "ValidationValidEmailAddress")'); // Please enter a valid E-mail address
-                    addJointOwnerFormValid = false;
+                } else if (!emailRegx.test(formBlob.EmailTextbox.value)) {
+                    $q("#EmailTextbox").style.outline = "1px solid red";
+                    formValid = false;
                 } else {
-                    $q("#EmailAddressTextbox").style.outline = "none";
+                    $q("#EmailTextbox").style.outline = "none";
+                };
+
+                // name 
+                if (formBlob.NameTextbox.value === "") { // required
+                    $q("#NameTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                    // Regex test
+                } else if (!textRegx.test(formBlob.NameTextbox.value)) {
+                    $q("#NameTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                } else {
+                    $q("#NameTextbox").style.outline = "none";
+                };
+
+                // company 
+                if (formBlob.CompanyTextbox.value === "") { // required
+                    $q("#CompanyTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                    // Regex test
+                } else if (!textRegx.test(formBlob.CompanyTextbox.value)) {
+                    $q("#CompanyTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                } else {
+                    $q("#CompanyTextbox").style.outline = "none";
+                };
+
+                // subject 
+                if (formBlob.SubjectTextbox.value === "") { // required
+                    $q("#SubjectTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                    // Regex test
+                } else if (!textRegx.test(formBlob.SubjectTextbox.value)) {
+                    $q("#SubjectTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                } else {
+                    $q("#SubjectTextbox").style.outline = "none";
+                };
+
+                // phone
+                if (formBlob.PhoneTextbox.value === "") { // required
+                    $q("#PhoneTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                    // Regex test
+                } else if (!phoneRegx.test(formBlob.PhoneTextbox.value)) {
+                    $q("#PhoneTextbox").style.outline = "1px solid red";
+                } else {
+                    $q("#PhoneTextbox").style.outline = "none";
+                };
+             
+                // comments
+                if (!textRegx.test(formBlob.CommentsTextbox.value)) {
+                    $q("#CommentsTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                } else {
+                    $q("#CommentsTextbox").style.outline = "none";
+                };
+
+                // captcha
+                if (formBlob.CodeTextbox.value === "") { // required
+                    $q("#CodeTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                    // match test
+                } else if (formBlob.CodeTextbox.value !== formBlob.CodeTextboxHidden.value ) {
+                    $q("#CodeTextbox").style.outline = "1px solid red";
+                    formValid = false;
+                } else {
+                    $q("#CodeTextbox").style.outline = "none";
                 };
 
                 //
                 //
                 // check for anything that may have failed above
-                if (addJointOwnerFormValid === false) {
-                    $("#AddJointOwnerValidationDiv").slideDown();
-                    $("#AddJointOwnerValidationDiv").focus();
-                    $("#AddNewJointOwnerSubmitButton").prop("disabled", false);
+                if (formValid === false) {
+                    $q("#spinnerDiv").style.display = "none";
+                    $("#SubmitButton").prop("disabled", false);
                     return false;
                 };
 
                 // form is valid. Submit it.
-                if (addJointOwnerFormValid) {
+                if (formValid) {
+                    $q("#spinnerDiv").style.display = "inline-block";
                     formBlob.submit();
                 };             
             }
@@ -454,7 +392,6 @@
                 validateForm: _validateForm
             }
         }());
-
     </script>
   </body>
 </html>
