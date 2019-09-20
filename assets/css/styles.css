@@ -204,9 +204,9 @@ body {
 
 .navbar-collapse a.dropdown-item {
     font-family: 'montserrat_regular', 'Open Sans Regular', Arial, Helvetica, sans-serif;
-
     text-transform: none;
     font-size: 90%;
+    margin-top:.3rem;
 }
 
 .navbar-collapse a:hover {
@@ -243,6 +243,24 @@ body {
     -webkit-outline: none !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
+}
+
+@media (max-width: 1220px) {
+    .navbar-collapse a.dropdown-item {
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 1098px) {
+    .navbar-collapse a.dropdown-item {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 998px) {
+    .navbar-collapse a.dropdown-item {
+        font-size: 75%;
+    }
 }
 
 .body-copy-lg {
