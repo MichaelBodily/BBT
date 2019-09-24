@@ -9,9 +9,19 @@
 }
 
 .zoom:hover {
-  -ms-transform: scale(1.08); /* IE 9 */
-  -webkit-transform: scale(1.08); /* Safari 3-8 */
-  transform: scale(1.08); 
+  -ms-transform: scale(1.06); /* IE 9 */
+  -webkit-transform: scale(1.06); /* Safari 3-8 */
+  transform: scale(1.06); 
+}
+
+.lift {
+  transition: top .25s ease-out;
+  position: relative;;
+  top: 0px;
+}
+
+.lift:hover {
+  top: -12px;
 }
 
 

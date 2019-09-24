@@ -100,92 +100,95 @@
             <div>
                 <p>
                     To arrange for a Web Demo or get more info about Better Lobby Solution, provide your contact info  and click the 'submit' button.
+                    We demonstrate to only one CU at a time, but your staff can attend from different locations
                 </p>
                 
                 <p>
-                    A Better Branches' staff member will respond by email within one business day. If you would prefer a phone call, please indicate so in the comments section.
+                    A Better Branches' staff member will respond by email within one business day. If you would prefer a phone call, 
+                    please indicate so in the comments section.
                 </p>
             </div>
 
             <hr>
 
-            <form id="BbtForm" action="http://www.bing.com" method="post" class="bbt-form">
+            <form id="BbtForm" action="https://www.betterbranches.com/requestinfo.php" method="post" class="bbt-form">
                 <!-- EMAIL -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="EmailTextbox">Your Email Address</label>
+                        <label for="email">Your Email Address</label>
                     </div>
 
                     <div class="col-md-5">
-                        <input id="EmailTextbox" name="EmailTextbox" placeholder="Enter Email" class="form-control" maxlength="64" />
+                        <input id="email" name="email" placeholder="Enter Email" class="form-control" maxlength="64" />
                     </div>
                 </div>
 
                 <!-- NAME -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="NameTextbox">Your Name</label>
+                        <label for="uname">Your Name</label>
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" id="NameTextbox" name="NameTextbox" placeholder="Enter Name" class="form-control" maxlength="64" />
+                        <input type="text" id="uname" name="uname" placeholder="Enter Name" class="form-control" maxlength="64" />
                     </div>
                 </div>
 
                 <!-- COMPANY -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="CompanyTextbox">Your Company</label>
+                        <label for="company">Your Company</label>
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" id="CompanyTextbox" name="CompanyTextbox" placeholder="Enter Company" class="form-control" maxlength="64" />
+                        <input type="text" id="company" name="company" placeholder="Enter Company" class="form-control" maxlength="64" />
                     </div>
                 </div>
 
                 <!-- SUBJECT -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="SubjectTextbox">Subject</label>
+                        <label for="subject">Subject</label>
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" id="SubjectTextbox" name="SubjectTextbox" placeholder="All Better Lobby - Schedule a Demo" class="form-control" maxlength="64" />
+                        <input type="text" id="subject" name="subject" readonly value="All Better Lobby - Schedule a Demo" class="form-control" maxlength="64" />
                     </div>
                 </div>
 
                 <!-- PHONE -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="PhoneTextbox">Phone Number</label>
+                        <label for="telno">Phone Number</label>
                     </div>
 
                     <div class="col-md-5">
-                        <input type="text" id="PhoneTextbox" name="PhoneTextbox" placeholder="Enter Phone" class="form-control" maxlength="12" />
+                        <input type="text" id="telno" name="telno" placeholder="Enter Phone" class="form-control" maxlength="12" />
                     </div>
                 </div>
 
                 <!-- QUESTIONS OR COMMENTS -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="CommentsTextbox">Questions or Comments</label>
+                        <label for="comments">Questions or Comments</label>
                     </div>
 
                     <div class="col-md-5">
-                        <textarea id="CommentsTextbox" name="CommentsTextbox" placeholder="Enter Comments" class="form-control" maxlength="512" rows="4"></textarea>
+                        <textarea id="comments" name="comments" placeholder="Enter Comments" class="form-control" maxlength="512" rows="4"></textarea>
                     </div>
                 </div>
 
                 <!-- CAPTCHA -->
                 <div class="row mt-3">
                     <div class="col-md-4 text-right label-div">
-                        <label for="CodeTextbox">Enter the Number</label>
+                        <label for="captcha">Enter the Number</label>
                     </div>
 
                     <div class="col-md-5">
-                        <div class="code-box" id="CodeBox"></div>
-                        <input id="CodeTextbox" name="CodeTextbox" class="form-control form-control-inline" style="width: 94px;" maxlength="4" />
-                        <input type="hidden" id="CodeTextboxHidden" name="CodeTextboxHidden" />
+                        <img src="https://www.betterbranches.com/captcha.php" class="code-box">
+
+                        <input id="captcha" name="captcha" class="form-control form-control-inline" style="width: 94px;" maxlength="4" />
+                        <input type="hidden" id="loc" name="loc" />
                     </div>
                 </div>
 
@@ -273,13 +276,6 @@
             var $q = document.querySelector.bind(document);
             var formBlob = $q("#BbtForm");
 
-            // set up code box
-            var seq = (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
-
-            var codeField = document.querySelector("#CodeBox")
-            codeField.textContent = seq;
-            formBlob.CodeTextboxHidden.value = seq;
-
             // local methods
             var _validateForm = function(e) {
                 console.log("Got here: e.currentTarget = ", e.currentTarget)
@@ -293,82 +289,67 @@
                 $("#SubmitButton").prop("disabled", true);
 
                 // email
-                if (formBlob.EmailTextbox.value === "") { // required
-                    $q("#EmailTextbox").style.outline = "1px solid red";
+                if (formBlob.email.value === "") { // required
+                    $q("#email").style.outline = "1px solid red";
                     formValid = false;
                     // Regex test
-                } else if (!emailRegx.test(formBlob.EmailTextbox.value)) {
-                    $q("#EmailTextbox").style.outline = "1px solid red";
+                } else if (!emailRegx.test(formBlob.email.value)) {
+                    $q("#email").style.outline = "1px solid red";
                     formValid = false;
                 } else {
-                    $q("#EmailTextbox").style.outline = "none";
+                    $q("#email").style.outline = "none";
                 };
 
                 // name 
-                if (formBlob.NameTextbox.value === "") { // required
-                    $q("#NameTextbox").style.outline = "1px solid red";
+                if (formBlob.uname.value === "") { // required
+                    $q("#uname").style.outline = "1px solid red";
                     formValid = false;
                     // Regex test
-                } else if (!textRegx.test(formBlob.NameTextbox.value)) {
-                    $q("#NameTextbox").style.outline = "1px solid red";
+                } else if (!textRegx.test(formBlob.uname.value)) {
+                    $q("#uname").style.outline = "1px solid red";
                     formValid = false;
                 } else {
-                    $q("#NameTextbox").style.outline = "none";
+                    $q("#uname").style.outline = "none";
                 };
 
                 // company 
-                if (formBlob.CompanyTextbox.value === "") { // required
-                    $q("#CompanyTextbox").style.outline = "1px solid red";
+                if (formBlob.company.value === "") { // required
+                    $q("#company").style.outline = "1px solid red";
                     formValid = false;
                     // Regex test
-                } else if (!textRegx.test(formBlob.CompanyTextbox.value)) {
-                    $q("#CompanyTextbox").style.outline = "1px solid red";
+                } else if (!textRegx.test(formBlob.company.value)) {
+                    $q("#company").style.outline = "1px solid red";
                     formValid = false;
                 } else {
-                    $q("#CompanyTextbox").style.outline = "none";
-                };
-
-                // subject 
-                if (formBlob.SubjectTextbox.value === "") { // required
-                    $q("#SubjectTextbox").style.outline = "1px solid red";
-                    formValid = false;
-                    // Regex test
-                } else if (!textRegx.test(formBlob.SubjectTextbox.value)) {
-                    $q("#SubjectTextbox").style.outline = "1px solid red";
-                    formValid = false;
-                } else {
-                    $q("#SubjectTextbox").style.outline = "none";
+                    $q("#company").style.outline = "none";
                 };
 
                 // phone
-                if (formBlob.PhoneTextbox.value === "") { // required
-                    $q("#PhoneTextbox").style.outline = "1px solid red";
+                if (formBlob.telno.value === "") { // required
+                    $q("#telno").style.outline = "1px solid red";
                     formValid = false;
                     // Regex test
-                } else if (!phoneRegx.test(formBlob.PhoneTextbox.value)) {
-                    $q("#PhoneTextbox").style.outline = "1px solid red";
+                } else if (!phoneRegx.test(formBlob.telno.value)) {
+                    $q("#telno").style.outline = "1px solid red";
                 } else {
-                    $q("#PhoneTextbox").style.outline = "none";
+                    $q("#telno").style.outline = "none";
                 };
              
                 // comments
-                if (!textRegx.test(formBlob.CommentsTextbox.value)) {
-                    $q("#CommentsTextbox").style.outline = "1px solid red";
+                if (!textRegx.test(formBlob.comments.value)) {
+                    $q("#comments").style.outline = "1px solid red";
                     formValid = false;
                 } else {
-                    $q("#CommentsTextbox").style.outline = "none";
+                    $q("#comments").style.outline = "none";
                 };
 
                 // captcha
-                if (formBlob.CodeTextbox.value === "") { // required
-                    $q("#CodeTextbox").style.outline = "1px solid red";
+                if (formBlob.captcha.value === "") { // required
+                    $q("#captcha").style.outline = "1px solid red";
                     formValid = false;
                     // match test
-                } else if (formBlob.CodeTextbox.value !== formBlob.CodeTextboxHidden.value ) {
-                    $q("#CodeTextbox").style.outline = "1px solid red";
-                    formValid = false;
                 } else {
-                    $q("#CodeTextbox").style.outline = "none";
+                    $q("#captcha").style.outline = "none";
                 };
 
                 //
@@ -383,6 +364,7 @@
                 // form is valid. Submit it.
                 if (formValid) {
                     $q("#spinnerDiv").style.display = "inline-block";
+                    formBlob.loc.value = formBlob.captcha.value;
                     formBlob.submit();
                 };             
             }

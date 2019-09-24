@@ -42,8 +42,23 @@ body {
 
 @media (max-width: 860px) {
     .banner-image {
+        background-image: url(../img/blue-banner-bg.jpg);
         padding-top: 240px;  
         background-position: center;
+    }
+}
+
+@media (max-width: 668px) {
+    .banner-image {
+        background-image: url(../img/blue-mobile-bg.jpg);
+        padding-top: 240px;  
+        background-position: center;
+    }
+}
+
+@media (min-width: 668px) {
+    .mobile-header {
+        display: none;
     }
 }
 
@@ -466,12 +481,14 @@ div.card-text {
     background-color: #9C182F;
     border-radius: 4px;
     color: #FFFFFF;
-    padding: .366rem .9rem;
+    padding: .22rem .2rem;
     text-decoration: none;
     outline: none;
     border: 1px solid #9C182F;
     display: inline-block;
     margin-right: 8px;
+    position: relative;
+    top: -1px;
 }
 
 .submit-button {
