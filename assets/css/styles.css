@@ -356,6 +356,10 @@ div.card-text {
     padding-bottom: .33rem;
 }
 
+.footer-body-copy a {
+    color: #666666;
+}
+
 .footer-body-copy p:last-of-type {
     border-bottom: none;
 }
