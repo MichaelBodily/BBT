@@ -153,6 +153,18 @@ body {
     }
 }
 
+@media (max-width: 668px) {
+    .navbar.home {
+        width: 100vw;
+    }
+
+    .navbar.home .logo-top, .logo-top {
+        max-height: 56px;
+        margin-left: 0px;
+    }
+}
+
+
 .navbar-toggler {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
