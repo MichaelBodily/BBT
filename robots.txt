@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /www/confirmation.php
+Disallow: /www/captcha.php
+Disallow: /www/requestinfonew.php
+Disallow: /www/demo-sorry.html
+Disallow: /www/demo-thank-you.html
+Sitemap: https://www.betterbranches.com/sitemap.xml
